@@ -14,6 +14,8 @@ function toFahrenheit(celsius) {
     return (celsius * 9 / 5) + 32;
 }
 
+/////////////////////////////////////////////////////////////////
+
 function tryConvert(temperature, convert) {
     const input = parseFloat(temperature);
     if (Number.isNaN(input)) {
@@ -24,12 +26,16 @@ function tryConvert(temperature, convert) {
     return rounded.toString();
 }
 
+////////////////////////////////////////////////////////////////
+
 const BoilingVerdict = ({ celsius }) => {
     if (celsius >= 100) {
         return <p>The water would boil.</p>;
     }
     return <p>The water would not boil.</p>;
 }
+
+////////////////////////////////////////////////////////////////
 
 class TemperatureInput extends React.Component {
     constructor(props) {
@@ -47,11 +53,13 @@ class TemperatureInput extends React.Component {
                 <legend>Enter temperature in {scaleNames[this.props.scale]}:</legend>
                 <input
                     value={this.props.temperature}
-                    onChange={this.handleChange} />
+                    onChange={this.handleChange} /> //to handleChange to pernao os callback edo
             </fieldset>
         );
     }
 }
+
+///////////////////////////////////////////////////////////////////////////////////
 
 class Calculator extends React.Component {
     constructor(props) {
